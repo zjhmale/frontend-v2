@@ -40,7 +40,11 @@ const SendAction: React.FC<Props> = ({ onDeposit }) => {
   } = useSendAction(onDeposit);
   const showFees = amount.gt(0) && !!fees;
   const amountMinusFees = showFees ? receiveAmount(amount, fees) : undefined;
-
+  console.log({
+    fees,
+    amount: amount.toString(),
+    amountMinusFees: amountMinusFees?.toString(),
+  });
   return (
     <AccentSection>
       <Wrapper>

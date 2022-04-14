@@ -105,7 +105,7 @@ export async function getLpFee(
   blockTime?: number
 ): Promise<Fee & { isLiquidityInsufficient: boolean }> {
   const result = {
-    pct: parseEther("1"),
+    pct: parseEther("0"),
     total: BigNumber.from(0),
     isLiquidityInsufficient: false,
   };
