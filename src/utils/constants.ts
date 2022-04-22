@@ -626,3 +626,5 @@ export function createTxHistoryClient() {
 
 export const enableReactQueryDevTools =
   process.env.REACT_APP_ENABLE_REACT_QUERY_DEV_TOOLS;
+export const migrationPoolV2Warning =
+  process.env.REACT_APP_MIGRATION_POOL_V2_WARNING;
