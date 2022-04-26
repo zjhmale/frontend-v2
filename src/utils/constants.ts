@@ -575,7 +575,7 @@ export const disableDeposits = process.env.REACT_APP_DISABLE_DEPOSITS;
 
 interface txHistoryConfig {
   chainId: number;
-  provider?: Provider;
+  provider: Provider;
   spokePoolContractAddr: string;
   lowerBoundBlockNumber?: number;
 }
@@ -616,6 +616,7 @@ export function createTxHistoryClient() {
     },
     {
       chainId: ChainId.MAINNET,
+      provider: PROVIDERS[ChainId.MAINNET](),
       spokePoolContractAddr: SPOKE_ADDRESSES[ChainId.MAINNET],
     },
   ];
