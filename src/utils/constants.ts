@@ -379,7 +379,7 @@ export const SPOKE_ADDRESSES: Record<ChainId, string> = {
   [ChainId.OPTIMISM]: ethers.constants.AddressZero,
   [ChainId.BOBA]: ethers.constants.AddressZero,
   [ChainId.POLYGON]: ethers.constants.AddressZero,
-  [ChainId.RINKEBY]: getAddress("0x90743806D7A66b37F31FAfd7b3447210aB55640f"),
+  [ChainId.RINKEBY]: getAddress("0xB078bBb35f8E24c2431b9d2a88C0bC0c26CC1F92"),
   [ChainId.KOVAN]: getAddress("0x73549B5639B04090033c1E77a22eE9Aa44C2eBa0"),
   [ChainId.KOVAN_OPTIMISM]: getAddress(
     "0x2b7b7bAE341089103dD22fa4e8D7E4FA63E11084"
@@ -575,7 +575,7 @@ export const disableDeposits = process.env.REACT_APP_DISABLE_DEPOSITS;
 
 interface txHistoryConfig {
   chainId: number;
-  provider: Provider;
+  provider?: Provider;
   spokePoolContractAddr: string;
   lowerBoundBlockNumber?: number;
 }
@@ -616,7 +616,6 @@ export function createTxHistoryClient() {
     },
     {
       chainId: ChainId.MAINNET,
-      provider: PROVIDERS[ChainId.MAINNET](),
       spokePoolContractAddr: SPOKE_ADDRESSES[ChainId.MAINNET],
     },
   ];
